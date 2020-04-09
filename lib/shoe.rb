@@ -4,13 +4,14 @@ class Shoe
   BRANDS = []
 
   def initialize(brand)
-    @brand = brand
-    BRANDS << brand
+    self.brand = brand
   end
 
   def brand=(brand)
     @brand = brand
-    BRANDS << brand
+    if !BRANDS.find?(brand)
+      BRANDS << brand
+    end
   end
 
   def cobble
